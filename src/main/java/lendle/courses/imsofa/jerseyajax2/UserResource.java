@@ -37,6 +37,11 @@ public class UserResource {
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     public int updateUser(User user){
+        User oldUser = UserDB.getUser(user.getId());
+        if(oldUser!= null){
+            oldUser.setPassword(user.getPassword());
+            oldUser.setEmail(user.getEmail());
+        }
         UserDB.deleteUser(user);
         UserDB.addUser(user);
         return 1;

@@ -28,8 +28,7 @@ public class UserResource {
     @Produces(MediaType.APPLICATION_JSON)
     
     
-    
-    public User getUser(String id){
+    public User getUser(@PathParam("id")String id){
         return UserDB.getUser(id);
     }
     ///////////////////////////////////////////////

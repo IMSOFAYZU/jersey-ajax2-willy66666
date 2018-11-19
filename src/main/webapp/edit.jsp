@@ -19,9 +19,9 @@
                 //從 /webapi/user/{id} 讀入資料，填到指定欄位
                 $.ajax("webapi/user/<%=request.getParameter("id")%>", {
                     success:function(data){
-                        $("#id").val(data.id);
-                        $("#password").val(data.password);
-                        $("#email").val(data.email);
+                        $("#id").val(data.id),
+                        $("#password").val(data.password),
+                        $("#email").val(data.email)
                     
                 });
                 //////////////////////////////////////////
